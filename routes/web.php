@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\SantriController;
+use App\Models\Santri;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +17,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('life');
 });
+ 
+Route::get('/a', function () {
+    return view('index');
+});
+
+// Route::get ('/siswa','SantriController@index');
+
+//halaman utama
+Route::get('/siswa', [SantriController::class, 'index'] );
